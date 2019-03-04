@@ -16,7 +16,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: benjlevesque/helloworld:e9b4818
+      - image: benjlevesque/helloworld:09d8a34
         name: helloworld
         ports:
         - containerPort: 80
