@@ -4,7 +4,6 @@ metadata:
   labels:
     app: helloworld
   name: helloworld
-  namespace: default
 spec:
   selector:
     matchLabels:
@@ -17,7 +16,7 @@ spec:
         version: v1
     spec:
       containers:
-      - image: benjlevesque/helloworld
+      - image: benjlevesque/helloworld:e9b4818
         name: helloworld
         ports:
         - containerPort: 80
