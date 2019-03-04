@@ -13,7 +13,7 @@ workflows:
 jobs:
   patch:
     docker: 
-      - image: circleci/node
+      - image: circleci/python
     steps:
       - checkout
       - aws/install
