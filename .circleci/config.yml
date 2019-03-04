@@ -1,23 +1,20 @@
 version: 2.1
 
 orbs:
-  kubernetes: circleci/kubernetes@0.1.0
-  aws: circleci/aws-cli@0.1.4
+  request-aws: benjlevesque/request-aws@0.2.0
 
 workflows:
   version: 2
   cd:
     jobs:
-      - patch
+      - deploy
 
 jobs:
-  patch:
+  deploy:
     docker: 
       - image: circleci/python
     steps:
       - checkout
-      - aws/install
-      - aws/configure
-      - kubernetes/install
+      - request-aws/k8s-install
       - run: aws eks update-kubeconfig --name ${AWS_CLUSTER_NAME:=apps} --region ${AWS_REGION:=eu-west-1}
       - run: kubectl apply -n default --recursive -f kubernetes
