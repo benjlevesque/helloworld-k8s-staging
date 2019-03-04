@@ -1,0 +1,16 @@
+version: 2.1
+
+
+workflows:
+  version: 2
+  cd:
+    jobs:
+      - patch
+
+jobs:
+  patch:
+    docker: 
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: echo "kubectl apply ..."
