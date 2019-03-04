@@ -16,5 +16,5 @@ jobs:
     steps:
       - checkout
       - request-aws/k8s-install
-      - run: aws eks update-kubeconfig --name ${AWS_CLUSTER_NAME:=apps} --region ${AWS_REGION:=eu-west-1}
+      - request-aws/k8s-configure
       - run: kubectl apply -n default --recursive -f kubernetes
