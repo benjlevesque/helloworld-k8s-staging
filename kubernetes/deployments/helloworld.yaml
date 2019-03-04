@@ -4,20 +4,12 @@ metadata:
   labels:
     app: helloworld
   name: helloworld
-  namespace: default
 spec:
   selector:
     matchLabels:
       app: helloworld
       version: v1
-  template:
-    metadata:
-      labels:
-        app: helloworld
-        version: v1
-    spec:
-      containers:
-      - image: benjlevesque/helloworld
-        name: helloworld
-        ports:
-        - containerPort: 80
+  spec:
+    containers:
+    - image: benjlevesque/helloworld:afc6a48
+      name: helloworld
